@@ -1,19 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 
-export default function useDebounce<Value>(
-  value: Value,
-  delay: number,
-  onUpdate?: (debouncedValue: Value) => void
-): Value {
+export default function useDebounce<Value>(value: Value, delay: number): Value {
   const [debouncedValue, setDebouncedValue] = useState(value)
 
   const onTimeout = useCallback(() => {
     setDebouncedValue(value)
-
-    if (onUpdate) {
-      onUpdate(value)
-    }
-  }, [value, onUpdate])
+  }, [value])
 
   useEffect(() => {
     if (value === debouncedValue) {
