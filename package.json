@@ -1,0 +1,31 @@
+{
+  "name": "hooks",
+  "version": "0.0.0",
+  "description": "A collection of common react hooks",
+  "main": "index.js",
+  "repository": "git@github.com:johngeorgewright/hooks.git",
+  "author": "John Wright <johngeorge.wright@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/debounce"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,json,js,jsx,ts,tsx,yml,yaml}": [
+      "prettier --ignore-path .gitignore --write"
+    ]
+  }
+}
