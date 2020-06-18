@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/debounce"
+    "packages/debounce",
+    "packages/toggle"
   ],
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
