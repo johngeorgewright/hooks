@@ -7,6 +7,7 @@
   "author": "John Wright <johngeorge.wright@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "tsc --project ./tsconfig.json",
     "postbuild": "rimraf dist/**/__tests__",
