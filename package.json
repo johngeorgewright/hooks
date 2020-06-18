@@ -15,22 +15,23 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "husky": "^4.2.5",
+    "lerna": "^3.22.1",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "yarn commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{md,json,js,jsx,ts,tsx,yml,yaml}": [
-      "yarn prettier --ignore-path .gitignore --write"
+      "prettier --ignore-path .gitignore --write"
     ]
   },
   "scripts": {
-    "build": "yarn workspaces foreach -a run build",
-    "test": "yarn workspaces foreach -a run test"
+    "build": "lerna run build",
+    "test": "lerna run test"
   }
 }
