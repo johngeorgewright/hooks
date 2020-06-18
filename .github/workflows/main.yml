@@ -1,0 +1,2 @@
+- name: Semantic Releaser
+  uses: brpaz/action-semantic-release@v1
